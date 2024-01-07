@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamers day google </title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <img src="g4.jpg" style=" height: 60px;"></a>
+    </header>
+<br>
+<br>
+    <section >    
+         <div>
+        <h3 class="Q"> The first question</h3>
+
+    </div>   
+<br>      
+    </section>
+   
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="popup-message">correct ! </p>
+        </div>
+    </div>
+    
+<section><div class="question" id="question">
+    <div class="container">
+        <div class="question-list">
+
+            <div>
+                <i class='bx bx-game' style='color:rgb(255, 0, 247)'  ></i>
+                <h2> شالعلوم؟</h2>
+                <p>
+                </p>
+                <br>  <br>  
+<input type="text" id="answer" name="answer">
+           
+<br>
+<br>
+<button onclick="checkAnswer()">submit.</button>
+                <br>
+                <br>
+                <p id="result"></p>
+             
+                <script>
+                  function showPopup(message) {
+    var popup = document.getElementById("popup");
+    var span = document.getElementsByClassName("close")[0];
+    var popupMessage = document.getElementById("popup-message");
+
+    popup.style.display = "block";
+    popupMessage.innerText = message;
+
+    span.onclick = function() {
+        popup.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+}
+
+function checkAnswer() {
+    var userAnswer = document.getElementById("answer").value.toLowerCase();
+    var resultElement = document.getElementById("result");
+    var nextPageButton = document.getElementById("nextPageButton");
+
+    if (userAnswer=="طيبين") {
+        showPopup("Correct answer! You can go to the next question.");
+        nextPageButton.style.display = "block";
+    } else {
+        document.getElementById("result").innerText = " Wrong answer, try again ";
+        document.getElementById("answer").value = ""; 
+    }
+}
+
+function navigateToNextPage() {
+    showPopup("Go to the next question!");
+}
+                </script>
+            </div>
+          
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="nextPageButton" id="nextPageButton" style="display:none;">
+  <a href="./Q2.html">  <button onclick="navigateToNextPage()"> NEXT</button></a>
+  </div>
+ <script src="main.js"></script>
+</body>
+</html>

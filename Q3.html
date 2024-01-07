@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamers day google </title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <img src="g4.jpg" style=" height: 60px;"></a>
+    </header>
+<br>
+<br>
+    <section >    
+         <div>
+        <h3 class="Q"> The third question</h3>
+
+    </div>   
+    <br>      
+        </section>
+       
+    
+        
+    <section><div class="question" id="question">
+        <div class="container">
+            <div class="question-list">
+    
+                <div>
+                    <i class='bx bx-game' style='color:rgb(255, 0, 247)'  ></i>
+                    <h2> xxxxxx</h2>
+                    <p>xxxxxxxxxxxxxx
+                        xxxxxxxxxx
+                        xxxxxxxxxxxxxxxxxx
+                        xxxxxxxxxxxxxx
+                        xxxxxxxxx
+                        xxxxxxxxxxxxxx
+                        xxxxxxxxx
+                    </p>
+                    <br>  <br>  
+    <input type="text" id="answer" name="answer">
+               
+    <br>
+    <br>
+    <button onclick="checkAnswer()">submit.</button>
+                    <br>
+                    <br>
+                    <p id="result"></p>
+                 
+                    <script>
+                      function checkAnswer() {
+                        var userAnswer = document.getElementById("answer").value.toLowerCase();
+                        var correctAnswer = "answer";
+    
+                        var resultElement = document.getElementById("result");
+                        var nextPageButton = document.getElementById("nextPageButton");
+                  
+                  
+                        if (userAnswer === correctAnswer) {
+                            document.getElementById("result").innerText = " Correct answer !";
+                            nextPageButton.style.display = "block"; // عرض زر الانتقال إلى الصفحة التالية
+    
+                          } else {
+                            document.getElementById("result").innerText = " Wrong answer, try again ";
+                            document.getElementById("answer").value = ""; 
+                        }
+                      }
+                      function navigateToNextPage() {
+                        // يمكنك هنا تحديد الصفحة التي تريد الانتقال إليها بعد الإجابة الصحيحة
+                    
+                        alert("Go to the next question!");
+                      }
+                    </script>
+                </div>
+              
+            </div>
+        </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <div class="nextPageButton" id="nextPageButton" style="display:none;">
+    <a href="./Q4.html"> <button onclick="navigateToNextPage()"> NEXT</button></a>   
+      </div>
+     <script src="main.js"></script>
+    </body>
+    </html>
