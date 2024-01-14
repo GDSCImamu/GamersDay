@@ -11,84 +11,102 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"> <img src="g4.jpg" style=" height: 60px;"></a>
-    </header>
+
+
+    
+    <div class="intro__logo">
+        <img src="g4.jpg" alt="" class="intro__img" />
+      </div>
 <br>
 <br>
     <section >    
          <div>
         <h3 class="Q"> The second question</h3>
 
-      </div>   
-      <br>      
-          </section>
-         
-      
-          
-      <section><div class="question" id="question">
-          <div class="container">
-              <div class="question-list">
-      
-                  <div>
-                      <i class='bx bx-game' style='color:rgb(255, 0, 247)'  ></i>
-                      <h2> xxxxxx</h2>
-                      <p>xxxxxxxxxxxxxx
-                          xxxxxxxxxx
-                          xxxxxxxxxxxxxxxxxx
-                          xxxxxxxxxxxxxx
-                          xxxxxxxxx
-                          xxxxxxxxxxxxxx
-                          xxxxxxxxx
-                      </p>
-                      <br>  <br>  
-      <input type="text" id="answer" name="answer">
-                 
-      <br>
-      <br>
-      <button onclick="checkAnswer()">submit.</button>
-                      <br>
-                      <br>
-                      <p id="result"></p>
-                   
-                      <script>
-                        function checkAnswer() {
-                          var userAnswer = document.getElementById("answer").value.toLowerCase();
-                          var correctAnswer = "answer";
-      
-                          var resultElement = document.getElementById("result");
-                          var nextPageButton = document.getElementById("nextPageButton");
-                    
-                    
-                          if (userAnswer === correctAnswer) {
-                              document.getElementById("result").innerText = " Correct answer !";
-                              nextPageButton.style.display = "block"; // عرض زر الانتقال إلى الصفحة التالية
-      
-                            } else {
-                              document.getElementById("result").innerText = " Wrong answer, try again ";
-                              document.getElementById("answer").value = ""; 
-                          }
-                        }
-                        function navigateToNextPage() {
-                          // يمكنك هنا تحديد الصفحة التي تريد الانتقال إليها بعد الإجابة الصحيحة
-                      
-                          alert("Go to the next question!");
-                        }
-                      </script>
-                  </div>
-                
-              </div>
-          </div>
-      
-      </div>
-      
-      </div>
-      
-      </section>
-      
-      <div class="nextPageButton" id="nextPageButton" style="display:none;">
-        <a href="./Q3.html">  <button onclick="navigateToNextPage()"> NEXT</button></a>
+    </div>   
+<br>      
+    </section>
+   
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="popup-message">correct ! </p>
         </div>
-       <script src="main.js"></script>
-      </body>
-      </html>
+    </div>
+    
+<section><div class="question" id="question">
+    <div class="container">
+        <div class="question-list">
+
+            <div>
+                <i class='bx bx-game' style='color:rgb(255, 0, 247)'  ></i>
+                <h3> what is the ..?</h3>
+                <p>
+                </p>
+                <br>  <br>  
+<input type="text" id="answer" name="answer">
+           
+<br>
+<br>
+<button onclick="checkAnswer()">submit.</button>
+                <br>
+                <br>
+                <p id="result"></p>
+             
+                <script>
+                  function showPopup(message) {
+    var popup = document.getElementById("popup");
+    var span = document.getElementsByClassName("close")[0];
+    var popupMessage = document.getElementById("popup-message");
+
+    popup.style.display = "block";
+    popupMessage.innerText = message;
+
+    span.onclick = function() {
+        popup.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+}
+
+function checkAnswer() {
+    var userAnswer = document.getElementById("answer").value.toLowerCase();
+    var resultElement = document.getElementById("result");
+    var nextPageButton = document.getElementById("nextPageButton");
+
+    if (userAnswer=="طيبين") {
+        showPopup("Correct answer! go to 2c-117");
+        nextPageButton.style.display = "flex";
+    } else {
+        document.getElementById("result").innerText = " Wrong answer, try again ";
+        document.getElementById("answer").value = ""; 
+    }
+}
+
+function navigateToNextPage() {
+    showPopup("Go to the next question!");
+}
+                </script>
+            </div>
+          
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<div id="nextPageButton" style="display:none;">
+    <a href="./Q3.html">
+      <button class="nextPageButton" onclick="navigateToNextPage()">next</button>
+    </a>
+  </div>
+ <script src="main.js"></script>
+</body>
+</html>
