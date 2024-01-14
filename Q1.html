@@ -11,9 +11,12 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"> <img src="g4.jpg" style=" height: 60px;"></a>
-    </header>
+
+
+    
+    <div class="intro__logo">
+        <img src="g4.jpg" alt="" class="intro__img" />
+      </div>
 <br>
 <br>
     <section >    
@@ -37,7 +40,7 @@
 
             <div>
                 <i class='bx bx-game' style='color:rgb(255, 0, 247)'  ></i>
-                <h2> شالعلوم؟</h2>
+                <h3> what is the ..?</h3>
                 <p>
                 </p>
                 <br>  <br>  
@@ -76,8 +79,8 @@ function checkAnswer() {
     var nextPageButton = document.getElementById("nextPageButton");
 
     if (userAnswer=="طيبين") {
-        showPopup("Correct answer! You can go to the next question.");
-        nextPageButton.style.display = "block";
+        showPopup("Correct answer! go to 2c-117");
+        nextPageButton.style.display = "flex";
     } else {
         document.getElementById("result").innerText = " Wrong answer, try again ";
         document.getElementById("answer").value = ""; 
@@ -99,8 +102,10 @@ function navigateToNextPage() {
 
 </section>
 
-<div class="nextPageButton" id="nextPageButton" style="display:none;">
-  <a href="./Q2.html">  <button onclick="navigateToNextPage()"> NEXT</button></a>
+<div id="nextPageButton" style="display:none;">
+    <a href="./Q2.html">
+      <button class="nextPageButton" onclick="navigateToNextPage()">next</button>
+    </a>
   </div>
  <script src="main.js"></script>
 </body>
